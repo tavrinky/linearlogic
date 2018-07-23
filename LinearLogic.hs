@@ -1,6 +1,8 @@
 
 {-# LANGUAGE DeriveFunctor #-}
 
+module LinearLogic where 
+
 type Statement a = [Expr a]
 
 data Statement' a = [Expr a] :|- [Expr a] deriving (Functor, Eq, Show)
