@@ -67,5 +67,5 @@ whyNotCut ((WhyNot a):(WhyNot b):gamma) = if a == b then WhyNot a : gamma else e
 whyNotRuleOne (a:g@((WhyNot _):as)) = (OfCourse a) : g 
 whyNotRuleTwo (a:gamma) = WhyNot a : gamma
 
---from josh
+--from Josh-Gordon
 ls // e = takeWhile (/= e) ls ++ tail (dropWhile (/= e) ls)
