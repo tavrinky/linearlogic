@@ -1,7 +1,28 @@
 
 {-# LANGUAGE DeriveFunctor #-}
 
-module LinearLogic where 
+module LinearLogic (Statement,
+                    Statement'(..)
+                    Expr,
+                    allToTheRight,
+                    simpleDual,
+                    initialSequence,
+                    initialCut,
+                    unit,
+                    introduceBottom,
+                    tensor,
+                    par,
+                    tensorUnit,
+                    parUnit,
+                    with,
+                    plusl,
+                    plusr,
+                    top, 
+                    whyNotIntro,
+                    whyNotCut,
+                    whyNotRuleOne,
+                    whyNotRuleTwo
+                  ) where 
 
 type Statement a = [Expr a]
 
@@ -67,5 +88,5 @@ whyNotCut ((WhyNot a):(WhyNot b):gamma) = if a == b then WhyNot a : gamma else e
 whyNotRuleOne (a:g@((WhyNot _):as)) = (OfCourse a) : g 
 whyNotRuleTwo (a:gamma) = WhyNot a : gamma
 
---from Josh-Gordon
+--from Joshua-Gordon
 ls // e = takeWhile (/= e) ls ++ tail (dropWhile (/= e) ls)
